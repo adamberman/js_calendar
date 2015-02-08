@@ -50,18 +50,18 @@
 }
 
 .event-title {
-	margin-top: 5px;
+	margin-top: 1px;
 	margin-left: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 1px;
 	font-size: 11px;
 	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
 	color: #3b5998;
 }
 
 .event-location {
-	margin-top: 5px;
+	margin-top: 0px;
 	margin-left: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 	font-size: 9px;
 	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
 }
