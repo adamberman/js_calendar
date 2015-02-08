@@ -1,6 +1,7 @@
 .col-1 {
 	width: 100px;
 	display: inline-block;
+	margin-right: 10px;
 }
 
 .time {
@@ -22,4 +23,12 @@
 	margin-bottom: 10px;
 	font-size: 10px;
 	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+
+.col-2 {
+	width: 1000px;
+	height: 850px;
+	display: inline-block;
+	background-color: lightgrey;
+	border: 1px solid grey;
 }
