@@ -1,0 +1,25 @@
+.col-1 {
+	width: 100px;
+	display: inline-block;
+}
+
+.time {
+	text-align: right;
+}
+
+.hour {
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	color: #585858;
+}
+
+.meridium, .half-hour {
+	display: inline-block;
+	color: grey;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 10px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
