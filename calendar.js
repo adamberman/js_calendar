@@ -13,18 +13,66 @@ var layOutDay = function (events) {
 	var eventTimes = [];
 
 	events.forEach(function (event) {
-		if (event.hasOwnProperty(startTime) && event.hasOwnProperty(endTime)) {
+		if (event.hasOwnProperty('startTime') && event.hasOwnProperty('endTime')) {
+			var start = event.startTime;
+			var end = event.endTime;
+
+			for (start; start <= end; start ++) {
+				if (eventTimes[start]) {
+					eventTimes[start][0] = 2;
+					eventTimes[start].push(2);
+				} else {
+					eventTimes[start] = [1];
+				}
+			}
+		}
+	})
+
+	events.forEach(function (event) {
+		if (event.hasOwnProperty('startTime') && event.hasOwnProperty('endTime')) {
 			var template = document.getElementById('event-template').innerHTML;
 
-			if (event.hasOwnProperty(eventTitle)) {
+			if (event.hasOwnProperty('eventTitle')) {
 				template.replace('Event Title', event.eventTitle);
 			}
 
-			if (event.hasOwnProperty(eventLocation)) {
+			if (event.hasOwnProperty('eventLocation')) {
 				template.replace('Event Location', event.eventLocation);
 			}
 
-			// place event into array based on times
+			var start = event.startTime;
+			var end = event.endTime;
+			var maxOverlap = 1;
+			var position = 0;
+
+			for (start; start <= end; start ++) {
+				var length = eventTimes[start].pop()
+				if (length > maxOverlap) {
+					maxOverlap = length;
+					if (eventTimes[start].length === 0) {
+						position = 1;
+					}
+				}
+			}
+
+			var el = document.createElement('DIV');
+			if (el.classList) {
+  			el.classList.add('event');
+			} else {
+  			el.className += ' ' + 'event';
+			}
+			el.style.width = String(594 / maxOverlap) + 'px';
+			el.style.height = String(event.endTime - event.startTime) + 'px';
+			el.style.top = String(15 + event.startTime) + 'px';
+			if (position === 0) {
+				el.style.left = '10px';
+			} else {
+				el.style.left = '310px';
+			}
+
+			el.innerHTML = template;
+			document.getElementById('col-2').appendChild(el);
+
 
 		} else {
 			// raise error
