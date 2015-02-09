@@ -9,14 +9,19 @@
 // Or: { startTime: 120, endTime: 240, eventTitle: "Brunch", eventLocation: "The Diner" }
 
 var layOutDay = function (events) {
+
+	var eventTimes = [];
+
 	events.forEach(function (event) {
 		if (event.hasOwnProperty(startTime) && event.hasOwnProperty(endTime)) {
+			var template = document.getElementById('event-template').innerHTML;
+
 			if (event.hasOwnProperty(eventTitle)) {
-				// Place title into template
+				template.replace('Event Title', event.eventTitle);
 			}
 
 			if (event.hasOwnProperty(eventLocation)) {
-				// Place location into template
+				template.replace('Event Location', event.eventLocation);
 			}
 
 			// place event into array based on times
