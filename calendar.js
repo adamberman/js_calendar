@@ -12,5 +12,13 @@ var layOutDay = function (events) {
 
 	document.getElementById('col-2').innerHTML = '';
 
-	
+	events.sort(function (a, b) {
+		if (a.start < b.start) {
+			return -1;
+		}
+		if (a.start > b.start) {
+			return 1;
+		}
+		return 0;
+	})
 }
