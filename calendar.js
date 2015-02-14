@@ -20,5 +20,5 @@ var layOutDay = function (events) {
 			return 1;
 		}
 		return 0;
-	})
+	});
 }
