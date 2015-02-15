@@ -10,8 +10,10 @@
 
 var layOutDay = function (events) {
 
+	// Clear current calendar of events
 	document.getElementById('col-2').innerHTML = '';
 
+	// Sort events by start time
 	events.sort(function (a, b) {
 		if (a.start < b.start) {
 			return -1;
@@ -20,5 +22,18 @@ var layOutDay = function (events) {
 			return 1;
 		}
 		return 0;
+	});
+
+	// Store number of columns for horizontal placement
+	var numCols = 0;
+
+	// Store overlapping columns in a row, place each row in rows
+	var row = {
+		end: 0
+	};
+	var rows = [];
+
+	events.forEach(function (event) {
+		
 	});
 }
